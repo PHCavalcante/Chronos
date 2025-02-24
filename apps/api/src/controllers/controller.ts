@@ -1,4 +1,4 @@
-import { getEvents, postEvents, editEvents, removeEvents } from "../models/models.ts";
+import { getEvents, postEvents, editEvents, removeEvents } from "../models/models";
 
 export async function getEventsController(req, res) {
   try{

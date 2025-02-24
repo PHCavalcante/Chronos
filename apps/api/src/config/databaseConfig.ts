@@ -5,7 +5,6 @@ export default async function connectToDatabase(connectionString: string): Promi
 
     try{
         mongoClient = await new MongoClient(connectionString).connect();
-        console.log("Connected to the database");
         return mongoClient;
     }catch(error){
         console.log("Error connecting to the database", error);

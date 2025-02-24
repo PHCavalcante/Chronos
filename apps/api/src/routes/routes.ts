@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { getEventsController, postEventsController, editEventsController, removeEventsController } from "../controllers/controller.ts";
+import { getEventsController, postEventsController, editEventsController, removeEventsController } from "../controllers/controller";
 
 const corsOptions = {
     origin: "http://localhost:3001",
