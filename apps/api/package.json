@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node src/server.js",
-    "start": "node --env.-file=.env.local server.js"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
