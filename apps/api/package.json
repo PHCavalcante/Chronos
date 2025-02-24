@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "pnpm install",
-    "dev": "node server.ts"
+    "build": "npm install && tsc",
+    "dev": "node dist/server.js"
   },
   "author": "",
   "license": "ISC",
