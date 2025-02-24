@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "module": "CommonJS",
+    "allowJs": true,
+    "rootDir": "./",
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "allowImportingTsExtensions": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noImplicitAny": false,
+    "incremental": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": false
+  },
+  "paths": {
+      "@/*": ["./src/*"]
+    },
+  "include": ["src", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
