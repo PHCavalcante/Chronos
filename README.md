@@ -1,84 +1,98 @@
-# Turborepo starter
+# Chronos
 
-This Turborepo starter is maintained by the Turborepo core team.
+Bem-vindo ao repositório do **Chronos**, um monorepo desenvolvido para gerenciar múltiplos projetos de forma eficiente utilizando o [Turborepo](https://turbo.build/). Este repositório contém duas aplicações principais um Front-end e um Back-end e foi feito para um desafio técnico da [TokenLab](https://www.tokenlab.com.br/pt/home).
 
-## Using this example
+## Aplicações e Pacotes
 
-Run the following command:
+- **Aplicações:**
+  - `api`: Aplicação [Express.js](https://expressjs.com/) responsável pela documentação.
+  - `web`: Aplicação [Next.js](https://nextjs.org/) onde o front-end está desenvolvido.
 
-```sh
-npx create-turbo@latest
-```
+## Tecnologias Utilizadas
 
-## What's inside?
+- [Next.js](https://nextjs.org/): Framework React para desenvolvimento web.
+- [TypeScript](https://www.typescriptlang.org/): Superset do JavaScript que adiciona tipagem estática ao código.
+- [Tailwindcss](https://tailwindcss.com/): Framework de css com foco em desenvolvimento rápido
+- [NextAuth](https://next-auth.js.org/): Biblioteca de que facilita a autenticação no [Nextjs](https://nextjs.org/).
+- [Turborepo](https://turbo.build/): Ferramenta para gerenciamento de monorepos de alto desempenho.
+- [ESLint](https://eslint.org/): Ferramenta de linting para identificar e corrigir problemas em código JavaScript/TypeScript.
 
-This Turborepo includes the following packages/apps:
+## Estrutura do Projeto
 
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
+A estrutura do repositório é organizada da seguinte forma:
 
 ```
-cd my-turborepo
-pnpm build
+/
+├── apps/
+│   ├── api/
+│   └── web/
+├── packages/
+│   ├── eslint-config/
+│   ├── typescript-config/
+│   └── ui/
+├── .vscode/
+├── .gitignore
+├── .npmrc
+├── package.json
+├── pnpm-lock.yaml
+├── pnpm-workspace.yaml
+├── turbo.json
+└── README.md
 ```
 
-### Develop
+## Pré-requisitos
 
-To develop all apps and packages, run the following command:
+Antes de começar, certifique-se de ter instalado em sua máquina:
 
+- [Node.js](https://nodejs.org/en/): Versão LTS recomendada.
+- [pnpm](https://pnpm.io/): Gerenciador de pacotes utilizado no projeto.
+
+## Como Executar o Projeto
+
+Siga os passos abaixo para configurar e executar o projeto localmente:
+
+1. **Instale as dependências:**
+   ```bash
+   pnpm install
+   ```
+
+2. **Inicie as aplicações em desenvolvimento:**
+   ```bash
+   pnpm run dev
+   ```
+
+   Este comando iniciará tanto o back-end `api` quanto o front-end `web`. Por padrão:
+
+   - `api`: [http://localhost:3000](http://localhost:3000)
+   - `web`: [http://localhost:3001](http://localhost:3001)
+
+## Scripts Disponíveis
+
+No arquivo `package.json`, você encontrará os seguintes scripts úteis:
+
+- `dev`: Inicia ambas as aplicações (`api` e `web`) em modo de desenvolvimento.
+- `build`: Compila as aplicações para produção.
+- `lint`: Executa o linter em todo o projeto.
+- `format`: Formata o código utilizando o Prettier.
+
+Para executar qualquer um desses scripts, utilize o comando:
+
+```bash
+pnpm run <script>
 ```
-cd my-turborepo
-pnpm dev
+
+Por exemplo:
+
+```bash
+pnpm run build
 ```
 
-### Remote Caching
+1. Faça um fork deste repositório.
+2. Crie uma nova branch com sua feature ou correção de bug: `git checkout -b minha-feature`.
+3. Faça as alterações necessárias e commit: `git commit -m 'Minha nova feature'`.
+4. Envie para o seu fork: `git push origin minha-feature`.
+5. Abra um Pull Request neste repositório.
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+## Licença
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+Este projeto está licenciado sob a licença MIT. Para mais detalhes, consulte o arquivo `LICENSE` no repositório.
