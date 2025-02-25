@@ -7,14 +7,22 @@ import ptBrlocale from "@fullcalendar/core/locales/pt-br";
 import Image from "next/image";
 import { Session } from "next-auth";
 import { FormatterInput } from "@fullcalendar/core";
+import { useState, useEffect } from "react";
+import eventTypes from "../types/eventTypes";
 
 export default function Calendar() {
-  const events = JSON.parse(localStorage.getItem("events") || "[]");
-  const session: Session | null = JSON.parse(
-    localStorage.getItem("session") || "null"
-  );
+  const [events, setEvents] = useState<eventTypes[]>([]);
+  const [session, setSession] = useState<Session | null>(null)
+  
   // const handleEventClick = (clickInfo) => {
  
+   useEffect(() => {
+     if (typeof window !== "undefined") {
+       setEvents(JSON.parse(localStorage.getItem("events") || "[]"));
+       setSession(JSON.parse(localStorage.getItem("session") || "null"));
+     }
+   }, []);
+
   const titleFormat: FormatterInput = {
     year: "numeric",
     month: "long",
@@ -48,7 +56,9 @@ export default function Calendar() {
                   className="rounded-full"
                 />
               </div>
-              <span className="self-start px-2">🕒 {eventInfo.timeText}</span>
+              <span className="self-start text-[#BFB0D2] px-2">
+                🕒 {eventInfo.timeText}
+              </span>
             </div>
           );
         }}
@@ -62,6 +72,9 @@ export default function Calendar() {
         titleFormat={titleFormat}
         footerToolbar={{
           center: "today,dayGridMonth,timeGridWeek,timeGridDay",
+        }}
+        dayCellDidMount={(arg) => {
+          arg.el.style.borderColor = "#BFB0D2";
         }}
       />
     </div>
