@@ -3,9 +3,9 @@ import cors from "cors";
 import { getEventsController, postEventsController, editEventsController, removeEventsController } from "../controllers/controller.js";
 
 const corsOptions = {
-    origin: "http://localhost:3001",
-    optionsSuccessStatus: 200,
-}
+  origin: "http://chronos-events.vercel.app",
+  optionsSuccessStatus: 200,
+};
 
 const routes = (app) => {
     app.use(express.json());
