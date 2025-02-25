@@ -3,7 +3,7 @@ import cors from "cors";
 import { getEventsController, postEventsController, editEventsController, removeEventsController } from "../controllers/controller.js";
 
 const corsOptions = {
-  origin: "http://chronos-events.vercel.app",
+  origin: "https://chronos-events.vercel.app",
   optionsSuccessStatus: 200,
 };
 
