@@ -1,7 +1,7 @@
 import { MongoClient } from "mongodb";
 
-export default async function connectToDatabase(connectionString: string): Promise<MongoClient>{
-    let mongoClient: MongoClient;
+export default async function connectToDatabase(connectionString){
+    let mongoClient;
 
     try{
         mongoClient = await new MongoClient(connectionString).connect();

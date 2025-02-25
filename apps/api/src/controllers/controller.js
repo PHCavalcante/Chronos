@@ -1,4 +1,4 @@
-import { getEvents, postEvents, editEvents, removeEvents } from "../models/models";
+import { getEvents, postEvents, editEvents, removeEvents } from "../models/models.js";
 
 export async function getEventsController(req, res) {
   try{
@@ -22,7 +22,7 @@ export async function postEventsController(req, res) {
 }
 
 export async function editEventsController(req, res) {
-    const eventId:string = req.params.eventId;
+    const eventId = req.params.eventId;
     if (eventId.length !== 24) {
         res.status(400).json({message: "Invalid ID"});
         return;

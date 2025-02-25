@@ -1,8 +1,8 @@
 import { ObjectId } from "mongodb";
-import connectToDatabase from "../config/databaseConfig";
+import connectToDatabase from "../config/databaseConfig.js";
 
 
-function createMongoObjectId(id:string): ObjectId {
+function createMongoObjectId(id){
   return ObjectId.createFromHexString(id);
 }
 
