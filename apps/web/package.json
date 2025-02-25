@@ -4,15 +4,24 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack --port 3000",
+    "dev": "next dev --turbopack --port 3001",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3001",
     "lint": "next lint --max-warnings 0",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.1.15",
+    "@fullcalendar/daygrid": "^6.1.15",
+    "@fullcalendar/react": "^6.1.15",
+    "@fullcalendar/timegrid": "^6.1.15",
     "@repo/ui": "workspace:*",
+    "@tailwindcss/postcss": "^4.0.8",
+    "autoprefixer": "^10.4.20",
+    "axios": "^1.7.9",
     "next": "^15.1.6",
+    "next-auth": "5.0.0-beta.25",
+    "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -23,6 +32,7 @@
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
     "eslint": "^9.20.0",
+    "tailwindcss": "3",
     "typescript": "5.7.3"
   }
 }
