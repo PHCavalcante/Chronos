@@ -120,7 +120,7 @@ export default function Modal({openModal, eventId, action, setOpenModal, session
                 onClick={
                   action === "Adicionar"
                     ? () => {
-                        axios.post(`http://localhost:3000/events`, {
+                        axios.post(`https://chronos-api-mbtd.onrender.com/events`, {
                           userEmail: eventData.current.userEmail,
                           title: eventData.current.title,
                           start: eventData.current.start,
@@ -133,15 +133,19 @@ export default function Modal({openModal, eventId, action, setOpenModal, session
                       }
                     : action === "Editar"
                       ? () => {
-                          axios.put(`http://localhost:3000/events/${eventId}`, {
-                            userEmail: eventData.current.userEmail,
-                            title: eventData.current.title,
-                            start: eventData.current.start,
-                            end: eventData.current.end,
-                            backgroundColor: eventData.current.backgroundColor,
-                            borderColor: eventData.current.borderColor,
-                            textColor: eventData.current.textColor,
-                          });
+                          axios.put(
+                            `https://chronos-api-mbtd.onrender.com/events/${eventId}`,
+                            {
+                              userEmail: eventData.current.userEmail,
+                              title: eventData.current.title,
+                              start: eventData.current.start,
+                              end: eventData.current.end,
+                              backgroundColor:
+                                eventData.current.backgroundColor,
+                              borderColor: eventData.current.borderColor,
+                              textColor: eventData.current.textColor,
+                            }
+                          );
                           setOpenModal({
                             newEventModal: false,
                             confirmationModal: false,

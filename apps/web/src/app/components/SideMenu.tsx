@@ -36,7 +36,9 @@ export default function SideMenu() {
   useEffect(() => {
     const fetchEvents = async () => {
     try{
-        const response = await axios.get(`http://localhost:3000/events/`);
+        const response = await axios.get(
+          `https://chronos-api-mbtd.onrender.com/events`
+        );
         setEvents(response.data);   
         localStorage.setItem("events", JSON.stringify(response.data));
     } catch (error){
