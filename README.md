@@ -2,6 +2,10 @@
 
 Bem-vindo ao repositório do **Chronos**, um monorepo desenvolvido para gerenciar múltiplos projetos de forma eficiente utilizando o [Turborepo](https://turbo.build/). Este repositório contém duas aplicações principais um Front-end e um Back-end e foi feito para um desafio técnico da [TokenLab](https://www.tokenlab.com.br/pt/home).
 
+# Design
+
+Todo o design do Front-end foi feito através do figma e pode ser visualizado por [aqui](https://www.figma.com/design/DLBtAPQ4m8FILzsYuYAw95/Chronos?node-id=0-1&p=f&t=kMqk0ruiQ90TeKFV-0)
+
 ## Aplicações e Pacotes
 
 - **Aplicações:**
